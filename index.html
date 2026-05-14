@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men Life Store | Premium Goods</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-img {
+            width: 100%;
+            height: 250px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+        .product-price {
+            font-size: 1.1rem;
+            color: #e63946;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .product-btn {
+            display: block;
+            text-align: center;
+            padding: 0.8rem;
+            background-color: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .product-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Men Life Store</h1>
+        <p>Premium Goods for the Modern Man</p >
+    </header>
 
+    <div class="container">
+        <!-- 产品1：手表 -->
+        <div class="product-card">
+            <div class="product-img">Product Image 1</div>
+            <div class="product-info">
+                <h3 class="product-title">Luxury Quartz Watch</h3>
+                <p class="product-price">$49.99</p >
+                <a href=" " class="product-btn">View Details</a >
+            </div>
+        </div>
+
+        <!-- 产品2：男性健康 -->
+        <div class="product-card">
+            <div class="product-img">Product Image 2</div>
+            <div class="product-info">
+                <h3 class="product-title">Male Enhancement Supplement</h3>
+                <p class="product-price">$29.99</p >
+                <a href="#" class="product-btn">View Details</a >
+            </div>
+        </div>
+
+        <!-- 产品3：情趣用品 -->
+        <div class="product-card">
+            <div class="product-img">Product Image 3</div>
+            <div class="product-info">
+                <h3 class="product-title">Silicone Adult Toy</h3>
+                <p class="product-price">$39.99</p >
+                <a href="#" class="product-btn">View Details</a >
+            </div>
+        </div>
+    </div>
+</body>
+</html>
