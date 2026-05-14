@@ -1,116 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men Life Store | Premium Goods</title>
+    <title>私密生活馆 | 男士优选</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
+
         body {
-            background-color: #f4f4f4;
+            background-color: #fdf2f4; /* 柔和的淡粉底色，不刺眼 */
             color: #333;
         }
+
+        /* 头部渐变背景，贴合情趣调性 */
         header {
-            background-color: #1a1a1a;
+            background: linear-gradient(135deg, #5c0029, #a64d79);
             color: white;
-            padding: 1.5rem;
+            padding: 2rem 1rem;
             text-align: center;
         }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.6rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
         .container {
             max-width: 1200px;
-            margin: 2rem auto;
+            margin: 3rem auto;
             padding: 0 1rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2rem;
         }
+
+        /* 卡片设计：圆角+柔影，温和高级 */
         .product-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(92, 0, 41, 0.08);
+            transition: all 0.3s ease;
         }
+
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(92, 0, 41, 0.15);
         }
+
+        /* 产品图片占位 */
         .product-img {
             width: 100%;
-            height: 250px;
-            background-color: #eee;
+            height: 260px;
+            background-color: #f5e6eb;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
+            color: #a64d79;
+            font-size: 1.1rem;
         }
+
         .product-info {
-            padding: 1.5rem;
+            padding: 1.8rem;
         }
+
+        /* 产品标题 */
         .product-title {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
+            margin-bottom: 0.6rem;
+            color: #5c0029;
+            font-weight: 600;
         }
-        .product-price {
-            font-size: 1.1rem;
-            color: #e63946;
-            font-weight: bold;
+
+        /* 产品描述 */
+        .product-desc {
+            color: #666;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
+            line-height: 1.5;
         }
+
+        /* 价格用低饱和酒红色，突出但不刺眼 */
+        .product-price {
+            font-size: 1.3rem;
+            color: #b8325c;
+            font-weight: bold;
+            margin-bottom: 1.4rem;
+        }
+
+        /* 按钮配色：和主题呼应，柔和不突兀 */
         .product-btn {
             display: block;
             text-align: center;
-            padding: 0.8rem;
-            background-color: #1a1a1a;
+            padding: 0.9rem;
+            background-color: #a64d79;
             color: white;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 8px;
+            font-weight: 500;
             transition: background-color 0.3s ease;
         }
+
         .product-btn:hover {
-            background-color: #333;
+            background-color: #5c0029;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Men Life Store</h1>
-        <p>Premium Goods for the Modern Man</p >
+        <h1>私密生活馆</h1>
+        <p>男士优选 · 隐私发货 · 品质保障</p >
     </header>
 
     <div class="container">
-        <!-- 产品1：手表 -->
+        <!-- 1. 情趣内衣 -->
         <div class="product-card">
-            <div class="product-img">Product Image 1</div>
+            <div class="product-img">情趣内衣产品图</div>
             <div class="product-info">
-                <h3 class="product-title">Luxury Quartz Watch</h3>
-                <p class="product-price">$49.99</p >
-                <a href=" " class="product-btn">View Details</a >
-            </div>
-        </div>
-
-        <!-- 产品2：男性健康 -->
-        <div class="product-card">
-            <div class="product-img">Product Image 2</div>
-            <div class="product-info">
-                <h3 class="product-title">Male Enhancement Supplement</h3>
+                <h3 class="product-title">性感蕾丝套装</h3>
+                <p class="product-desc">柔软亲肤蕾丝，多种款式可选，隐私包装发货</p >
                 <p class="product-price">$29.99</p >
-                <a href="#" class="product-btn">View Details</a >
+                <a href=" " class="product-btn">查看款式</a >
             </div>
         </div>
 
-        <!-- 产品3：情趣用品 -->
+        <!-- 2. 情趣用品 -->
         <div class="product-card">
-            <div class="product-img">Product Image 3</div>
+            <div class="product-img">情趣用品产品图</div>
             <div class="product-info">
-                <h3 class="product-title">Silicone Adult Toy</h3>
+                <h3 class="product-title">硅胶成人玩具</h3>
+                <p class="product-desc">医用级硅胶，静音设计，多种体验模式</p >
                 <p class="product-price">$39.99</p >
-                <a href="#" class="product-btn">View Details</a >
+                <a href="#" class="product-btn">了解详情</a >
+            </div>
+        </div>
+
+        <!-- 3. 男性健康 -->
+        <div class="product-card">
+            <div class="product-img">男性健康产品图</div>
+            <div class="product-info">
+                <h3 class="product-title">男士活力胶囊</h3>
+                <p class="product-desc">天然草本配方，温和调理，无副作用</p >
+                <p class="product-price">$24.99</p >
+                <a href="#" class="product-btn">咨询客服</a >
+            </div>
+        </div>
+
+        <!-- 4. 手表 -->
+        <div class="product-card">
+            <div class="product-img">手表产品图</div>
+            <div class="product-info">
+                <h3 class="product-title">商务石英腕表</h3>
+                <p class="product-desc">防水耐磨，精准走时，商务休闲百搭款</p >
+                <p class="product-price">$49.99</p >
+                <a href="#" class="product-btn">查看详情</a >
             </div>
         </div>
     </div>
