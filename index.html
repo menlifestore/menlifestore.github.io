@@ -1,170 +1,238 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>私密生活馆 | 男士优选</title>
+    <title>Men Life Store | 男士优选商城</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
         }
 
-        body {
-            background-color: #fdf2f4; /* 柔和的淡粉底色，不刺眼 */
+        /* 顶部导航栏 */
+        .top-nav {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 0.8rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* 促销横幅（还原原图的渐变+大字促销） */
+        .promo-banner {
+            background: linear-gradient(135deg, #ff7eb9, #ff65a3, #ff7afc);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        .promo-banner h2 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 1rem;
+        }
+        .promo-banner p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .promo-btn {
+            background: #111;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* 优惠栏 */
+        .discount-bar {
+            background: #ffeb3b;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+        .discount-item {
+            text-align: center;
+        }
+        .discount-item strong {
+            font-size: 1.3rem;
+            color: #111;
+            display: block;
+        }
+        .discount-item span {
+            font-size: 0.9rem;
             color: #333;
         }
 
-        /* 头部渐变背景，贴合情趣调性 */
-        header {
-            background: linear-gradient(135deg, #5c0029, #a64d79);
-            color: white;
-            padding: 2rem 1rem;
+        /* 分类标题 */
+        .category-title {
             text-align: center;
+            padding: 2rem 1rem 1rem;
+            font-size: 1.2rem;
+            color: #555;
         }
 
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.6rem;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .container {
+        /* 商品卡片区 */
+        .product-container {
             max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1rem;
+            margin: 0 auto;
+            padding: 0 1rem 3rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2rem;
         }
-
-        /* 卡片设计：圆角+柔影，温和高级 */
         .product-card {
-            background: white;
-            border-radius: 16px;
+            background: #fff;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(92, 0, 41, 0.08);
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-
         .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 25px rgba(92, 0, 41, 0.15);
+            transform: translateY(-5px);
         }
-
-        /*  */
         .product-img {
             width: 100%;
             height: 260px;
-            background-color: #f5e6eb;
+            background: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #a64d79;
-            font-size: 1.1rem;
+            color: #999;
+            font-size: 1rem;
         }
-
         .product-info {
-            padding: 1.8rem;
+            padding: 1.5rem;
         }
-
-        /* 产品标题 */
         .product-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.6rem;
-            color: #5c0029;
-            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
         }
-
-        /* 产品描述 */
-        .product-desc {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        /* 价格用低饱和酒红色，突出但不刺眼 */
         .product-price {
-            font-size: 1.3rem;
-            color: #b8325c;
+            font-size: 1.2rem;
+            color: #e63946;
             font-weight: bold;
-            margin-bottom: 1.4rem;
+            margin-bottom: 1rem;
         }
-
-        /* 按钮配色：和主题呼应，柔和不突兀 */
         .product-btn {
             display: block;
             text-align: center;
-            padding: 0.9rem;
-            background-color: #a64d79;
+            padding: 0.8rem;
+            background: #1a1a1a;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
+            border-radius: 4px;
+            transition: background 0.3s ease;
         }
-
         .product-btn:hover {
-            background-color: #5c0029;
+            background: #333;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>私密生活馆</h1>
-        <p>男士优选 · 隐私发货 · 品质保障</p >
-    </header>
+    <!-- 1. 顶部导航 -->
+    <div class="top-nav">
+        <div class="nav-logo">Men Life Store</div>
+        <div class="nav-menu">
+            <a href=" ">新品上市</a >
+            <a href="#">情趣内衣</a >
+            <a href="#">情趣用品</a >
+            <a href="#">男性健康</a >
+            <a href="#">精品手表</a >
+        </div>
+    </div>
 
-    <div class="container">
-        <!-- 1. 情趣内衣 -->
+    <!-- 2. 促销横幅 -->
+    <div class="promo-banner">
+        <h2>40% OFF</h2>
+        <p>四大品类 · 夏季特惠 · 隐私发货</p >
+        <a href="#" class="promo-btn">SHOP NOW</a >
+    </div>
+
+    <!-- 3. 优惠栏 -->
+    <div class="discount-bar">
+        <div class="discount-item">
+            <strong>$5 OFF</strong>
+            <span>Orders over $69</span>
+        </div>
+        <div class="discount-item">
+            <strong>$12 OFF</strong>
+            <span>Orders over $159</span>
+        </div>
+        <div class="discount-item">
+            <strong>$35 OFF</strong>
+            <span>Orders over $389</span>
+        </div>
+    </div>
+
+    <!-- 4. 商品区 -->
+    <div class="category-title">- Shop By Category -</div>
+    <div class="product-container">
+        <!-- 情趣内衣 -->
         <div class="product-card">
             <div class="product-img">情趣内衣产品图</div>
             <div class="product-info">
-                <h3 class="product-title">性感蕾丝套装</h3>
-                <p class="product-desc">柔软亲肤蕾丝，多种款式可选，隐私包装发货</p >
+                <h3 class="product-title">性感蕾丝情趣内衣</h3>
                 <p class="product-price">$29.99</p >
-                <a href=" " class="product-btn">查看款式</a >
+                <a href="#" class="product-btn">View Details</a >
             </div>
         </div>
 
-        <!-- 2. 情趣用品 -->
+        <!-- 情趣用品 -->
         <div class="product-card">
             <div class="product-img">情趣用品产品图</div>
             <div class="product-info">
-                <h3 class="product-title">硅胶成人玩具</h3>
-                <p class="product-desc">医用级硅胶，静音设计，多种体验模式</p >
+                <h3 class="product-title">硅胶静音情趣玩具</h3>
                 <p class="product-price">$39.99</p >
-                <a href="#" class="product-btn">了解详情</a >
+                <a href="#" class="product-btn">View Details</a >
             </div>
         </div>
 
-        <!-- 3. 男性健康 -->
+        <!-- 男性健康 -->
         <div class="product-card">
             <div class="product-img">男性健康产品图</div>
             <div class="product-info">
-                <h3 class="product-title">男士活力胶囊</h3>
-                <p class="product-desc">天然草本配方，温和调理，无副作用</p >
+                <h3 class="product-title">男士活力营养胶囊</h3>
                 <p class="product-price">$24.99</p >
-                <a href="#" class="product-btn">咨询客服</a >
+                <a href="#" class="product-btn">View Details</a >
             </div>
         </div>
 
-        <!-- 4. 手表 -->
+        <!-- 手表 -->
         <div class="product-card">
-            <div class="product-img">手表产品图</div>
+            <div class="product-img">商务石英腕表产品图</div>
             <div class="product-info">
-                <h3 class="product-title">商务石英腕表</h3>
-                <p class="product-desc">防水耐磨，精准走时，商务休闲百搭款</p >
+                <h3 class="product-title">商务防水石英手表</h3>
                 <p class="product-price">$49.99</p >
-                <a href="#" class="product-btn">查看详情</a >
+                <a href="#" class="product-btn">View Details</a >
             </div>
         </div>
     </div>
